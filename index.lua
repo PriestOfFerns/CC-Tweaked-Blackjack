@@ -21,8 +21,8 @@ term.clear()
 function cobalt.draw()
     if Stage == 0 then
         cobalt.graphics.print("BLACKJACK",2,2)
-        cobalt.graphics.setColor("green")
-        cobalt.graphics.rect("brown",0,0,25,10)
+        cobalt.graphics.setColor("brown")
+        cobalt.graphics.rect("line",0,0,28,15)
         
     end
 end
