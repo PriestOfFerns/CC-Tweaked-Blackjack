@@ -49,16 +49,19 @@ end
 function cobalt.mousepressed(x, y, button)
     print(x)
     print(y)
-    if button == 1 and Buttons.length > 0 then
+   
+    
+end
+while true do
+    local event, side, x, y = os.pullEvent("monitor_touch")
+    if event and Buttons.length > 0 then
         for k,v in pairs(Buttons) do
             if x > v.x[1] and x < v.x[2] and y > v.y[1] and y < v.y[2] then
                 v.func()
             end
         end
     end
-    
-end
-
+  end
 
 
 
