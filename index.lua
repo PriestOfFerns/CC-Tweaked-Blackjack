@@ -38,21 +38,8 @@ function cobalt.draw()
     elseif Stage == 1 then
         cobalt.graphics.setBackgroundColor("white")
     end
-end
 
 
-
-function cobalt.load()
-    cobalt.graphics.setBackgroundColor("lime")
-end
-
-function cobalt.mousepressed(x, y, button)
-    print(x)
-    print(y)
-   
-    
-end
-while true do
     local event, side, x, y = os.pullEvent("monitor_touch")
     if event and Buttons.length > 0 then
         for k,v in pairs(Buttons) do
@@ -61,7 +48,16 @@ while true do
             end
         end
     end
-  end
+end
+
+
+
+
+function cobalt.load()
+    cobalt.graphics.setBackgroundColor("lime")
+end
+
+
 
 
 
