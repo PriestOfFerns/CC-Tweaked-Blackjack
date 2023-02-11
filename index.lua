@@ -54,10 +54,10 @@ end
 
 touch = coroutine.create(function ()
     touchRun = false
-    local event, side, x, y = os.pullEvent("monitor_touch")
-    print(x)
+    local event, side, x, y = {}
+    print(x)os.pullEvent()
     print(y)
-    if event and Buttons.length > 0 then
+    if event == "monitor_touch" and  Buttons.length > 0 then
         for k,v in pairs(Buttons) do
             if x > v.x[1] and x < v.x[2] and y > v.y[1] and y < v.y[2] then
                 v.func()
