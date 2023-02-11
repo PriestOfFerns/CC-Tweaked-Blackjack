@@ -19,14 +19,14 @@ term.redirect(monitor)
 function cobalt.draw()
     if Stage == 0 then
         cobalt.graphics.print("BLACKJACK",2,2)
-        cobalt.graphics.setColor(8192)
+        cobalt.graphics.setColor("green")
         cobalt.graphics.rect("line",10,10,20,20)
         
     end
 end
 
 function cobalt.load()
-    cobalt.graphics.setBackgroundColor(32)
+    cobalt.graphics.setBackgroundColor("lime")
 end
 
 function cobalt.mousepressed(x, y, button)
