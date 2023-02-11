@@ -40,6 +40,10 @@ function cobalt.draw()
     end
 
 
+   
+end
+
+function cobalt.update()
     local event, side, x, y = os.pullEvent("monitor_touch")
     if event and Buttons.length > 0 then
         for k,v in pairs(Buttons) do
@@ -49,8 +53,6 @@ function cobalt.draw()
         end
     end
 end
-
-
 
 
 function cobalt.load()
