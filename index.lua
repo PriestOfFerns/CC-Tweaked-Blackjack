@@ -43,21 +43,12 @@ function cobalt.draw()
    
 end
 
-local touchRun = false
 function cobalt.update()
-    if touchRun then
-        touch.resume()
-    end
-    
-    
-end
-
-touch = coroutine.create(function ()
     touchRun = false
-    local event, side, x, y = {}
-    print(x)os.pullEvent()
-    print(y)
-    if event == "monitor_touch" and  Buttons.length > 0 then
+    local eventData = {os.pullEvent()}
+   
+    if eventData[1] == "monitor_touch" and  Buttons.length > 0 then
+        x,y = eventData[3],eventData[4]
         for k,v in pairs(Buttons) do
             if x > v.x[1] and x < v.x[2] and y > v.y[1] and y < v.y[2] then
                 v.func()
@@ -65,7 +56,10 @@ touch = coroutine.create(function ()
         end
     end
     touchRun = true
-end)
+    
+end
+
+
 
 function cobalt.load()
     cobalt.graphics.setBackgroundColor("lime")
