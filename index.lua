@@ -16,11 +16,13 @@ local Stage = 0
 
 term.redirect(monitor)
 
+term.clear()
+
 function cobalt.draw()
     if Stage == 0 then
         cobalt.graphics.print("BLACKJACK",2,2)
         cobalt.graphics.setColor("green")
-        cobalt.graphics.rect("line",0,0,20,20)
+        cobalt.graphics.rect("brown",0,0,25,10)
         
     end
 end
