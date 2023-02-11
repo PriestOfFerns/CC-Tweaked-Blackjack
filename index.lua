@@ -20,7 +20,7 @@ function cobalt.draw()
     if Stage == 0 then
         cobalt.graphics.print("BLACKJACK",2,2)
         cobalt.graphics.setColor("green")
-        cobalt.graphics.rect("line",10,10,20,20)
+        cobalt.graphics.rect("line",0,0,20,20)
         
     end
 end
