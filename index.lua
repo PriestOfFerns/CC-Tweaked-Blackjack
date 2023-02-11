@@ -6,9 +6,9 @@ args = {...}
 
 
 
-local monitor = peripheral.wrap(args[1] or "monitor_2")
-local barrel1 = peripheral.wrap(args[2] or "minecraft:barrel_0")
-local barrel2 = peripheral.wrap(args[3] or "minecraft:barrel_1")
+local monitor = peripheral.wrap(args[1] or "monitor_3")
+local barrel1 = peripheral.wrap(args[2] or "minecraft:barrel_2")
+local barrel2 = peripheral.wrap(args[3] or "minecraft:barrel_3")
 
 local Buttons = {}
 
@@ -24,6 +24,7 @@ end
 
 function cobalt.draw()
     if Stage == 0 then
+        cobalt.graphics.setBackgroundColor("green")
         cobalt.graphics.print("BLACKJACK",2,2)
         cobalt.graphics.setColor("brown")
         cobalt.graphics.rect("line",0,0,29,18)
