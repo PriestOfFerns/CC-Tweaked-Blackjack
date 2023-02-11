@@ -47,7 +47,8 @@ end
 function cobalt.mousepressed(x, y, button)
     print(x)
     print(y)
-    if  Buttons.length > 0 then
+    
+    if  #Buttons then
         for k,v in pairs(Buttons) do
             if x > v.x[1] and x < v.x[2] and y > v.y[1] and y < v.y[2] then
                 v.func()
