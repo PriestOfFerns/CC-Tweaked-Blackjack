@@ -4,18 +4,44 @@ local cobalt = dofile("/cobalt/init.lua")
 
 args = {...}
 
+
+
 local monitor = peripheral.wrap(args[1] or "monitor_2")
 local barrel1 = peripheral.wrap(args[2] or "minecraft:barrel_0")
 local barrel2 = peripheral.wrap(args[3] or "minecraft:barrel_1")
 
+local Buttons = {}
+
+local Stage = 0
+
+term.redirect(monitor)
 
 function cobalt.draw()
-    cobalt.graphics.print("Hello world!", 2, 1)
+    if Stage == 0 then
+        cobalt.graphics.print("BLACKJACK",2,2)
+        cobalt.graphics.setColor(8192)
+        cobalt.graphics.rect("line",10,10,20,20)
+        
+    end
 end
 
 function cobalt.load()
-    cobalt.graphics.setBackgroundColor(36)
+    cobalt.graphics.setBackgroundColor(32)
 end
+
+function cobalt.mousepressed(x, y, button)
+    if button == 1 and Buttons.length > 0 then
+        for k,v in pairs(Buttons) do
+            if x > v.x[1] and x < v.x[2] and y > v.y[1] and y < v.y[2] then
+                v.func()
+            end
+        end
+    end
+    
+end
+
+
+
 
 -- Start Cobalt's cycle
 cobalt.init()
