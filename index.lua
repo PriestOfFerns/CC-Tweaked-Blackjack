@@ -18,14 +18,29 @@ term.redirect(monitor)
 
 term.clear()
 
+local function Start()
+    Stage=1
+end
+
 function cobalt.draw()
     if Stage == 0 then
         cobalt.graphics.print("BLACKJACK",2,2)
         cobalt.graphics.setColor("brown")
-        cobalt.graphics.rect("line",0,0,28,15)
+        cobalt.graphics.rect("line",0,0,29,18)
         
+        cobalt.graphics.rect("fill",10,10,29,18)
+
+
+        cobalt.graphics.setColor("white")
+        cobalt.graphics.print("BLACKJACK",10,10)
+
+        Buttons = { {x={10,28},y={10,18},func=Start} }
+    elseif Stage == 1 then
+        cobalt.graphics.setBackgroundColor("white")
     end
 end
+
+
 
 function cobalt.load()
     cobalt.graphics.setBackgroundColor("lime")
