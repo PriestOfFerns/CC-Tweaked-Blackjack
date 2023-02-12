@@ -74,7 +74,17 @@ function cobalt.draw()
 
         
         cobalt.graphics.setColor("cyan")
-        --cobalt.graphics.print("Diamonds: "..tostring(InvCheck()),11,5)
+
+        local DCount = 0
+        for slot, item in pairs(input.list()) do
+            
+            if item.name == "minecraft:diamond" then
+                DCount=DCount+item.count
+            end
+        end
+
+        local text = "Diamonds: "..tostring(DCount)
+        cobalt.graphics.print(text,11,5)
 
 
         Buttons = { {x={10,17},y={10,12},func=Back} }
