@@ -29,10 +29,7 @@ end
 local function InvCheck()
     local DCount = 0
     for slot, item in pairs(input.list()) do
-        term.redirect(term.native())
-        print(item.name)
-    
-        term.redirect(monitor)
+        
         if item.name == "minecraft:diamond" then
             DCount=DCount+item.count
         end
@@ -77,7 +74,7 @@ function cobalt.draw()
 
         
         cobalt.graphics.setColor("cyan")
-        cobalt.graphics.print("Diamonds: "..tostring(InvCheck()),11,5)
+        --cobalt.graphics.print("Diamonds: "..tostring(InvCheck()),11,5)
 
 
         Buttons = { {x={10,17},y={10,12},func=Back} }
