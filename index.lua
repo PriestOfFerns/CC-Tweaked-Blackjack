@@ -35,20 +35,20 @@ function cobalt.draw()
         
         cobalt.graphics.rect("fill",10,10,2,1)
 
-
+        cobalt.graphics.setBackgroundColor("brown")
         cobalt.graphics.setColor("white")
         cobalt.graphics.print("BLACKJACK",11,11)
 
         Buttons = { {x={10,17},y={10,14},func=Start} }
     elseif Stage == 1 then
-        cobalt.graphics.setBackgroundColor("white")
+        
 
         cobalt.graphics.setColor("black")
         
         
         cobalt.graphics.rect("fill",10,10,2,1)
 
-
+        cobalt.graphics.setBackgroundColor("black")
         cobalt.graphics.setColor("white")
         cobalt.graphics.print("Back",11,11)
 
