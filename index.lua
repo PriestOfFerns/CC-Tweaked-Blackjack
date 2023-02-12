@@ -31,15 +31,18 @@ function cobalt.draw()
         cobalt.graphics.setBackgroundColor("green")
         cobalt.graphics.print("BLACKJACK",2,2)
         cobalt.graphics.setColor("brown")
+        cobalt.graphics.setBackgroundColor("green")
         cobalt.graphics.rect("line",0,0,29,18)
         
         cobalt.graphics.rect("fill",10,10,2,1)
 
         cobalt.graphics.setBackgroundColor("brown")
         cobalt.graphics.setColor("white")
-        cobalt.graphics.print("BLACKJACK",11,11)
+        cobalt.graphics.print("Start",11,11)
 
         Buttons = { {x={10,17},y={10,14},func=Start} }
+
+        cobalt.graphics.setBackgroundColor("green")
     elseif Stage == 1 then
         
 
@@ -53,6 +56,8 @@ function cobalt.draw()
         cobalt.graphics.print("Back",11,11)
 
         Buttons = { {x={10,17},y={10,14},func=Back} }
+
+        cobalt.graphics.setBackgroundColor("white")
     end
 
 
