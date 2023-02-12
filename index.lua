@@ -29,7 +29,10 @@ end
 local function InvCheck()
     local DCount = 0
     for slot, item in pairs(input.list()) do
+        term.redirect(term.native())
         print(item.name)
+    
+        term.redirect(monitor)
         if item.name == "minecraft:Diamond" then
             DCount=DCount+item.count
         end
