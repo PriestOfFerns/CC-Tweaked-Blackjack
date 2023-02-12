@@ -29,6 +29,7 @@ end
 local function InvCheck()
     local DCount = 0
     for slot, item in pairs(input.list()) do
+        print(item.name)
         if item.name == "minecraft:Diamond" then
             DCount=DCount+item.count
         end
@@ -81,8 +82,7 @@ function cobalt.draw()
 end
 
 function cobalt.mousepressed(x, y, button)
-    print(x)
-    print(y)
+   
     
     if  #Buttons > 0 then
         for k,v in pairs(Buttons) do
