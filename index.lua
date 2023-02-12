@@ -22,6 +22,10 @@ local function Start()
     Stage=1
 end
 
+local function Back()
+    Stage = 0
+end
+
 function cobalt.draw()
     if Stage == 0 then
         cobalt.graphics.setBackgroundColor("green")
@@ -29,15 +33,26 @@ function cobalt.draw()
         cobalt.graphics.setColor("brown")
         cobalt.graphics.rect("line",0,0,29,18)
         
-        cobalt.graphics.rect("fill",10,10,2,2)
+        cobalt.graphics.rect("fill",10,10,2,1)
 
 
         cobalt.graphics.setColor("white")
         cobalt.graphics.print("BLACKJACK",11,11)
 
-        Buttons = { {x={10,12},y={10,12},func=Start} }
+        Buttons = { {x={10,17},y={10,14},func=Start} }
     elseif Stage == 1 then
         cobalt.graphics.setBackgroundColor("white")
+
+        cobalt.graphics.setColor("black")
+        
+        
+        cobalt.graphics.rect("fill",10,10,2,1)
+
+
+        cobalt.graphics.setColor("white")
+        cobalt.graphics.print("Back",11,11)
+
+        Buttons = { {x={10,17},y={10,14},func=Back} }
     end
 
 
@@ -48,7 +63,7 @@ function cobalt.mousepressed(x, y, button)
     print(x)
     print(y)
     
-    if  #Buttons then
+    if  #Buttons > 0 then
         for k,v in pairs(Buttons) do
             if x > v.x[1] and x < v.x[2] and y > v.y[1] and y < v.y[2] then
                 v.func()
