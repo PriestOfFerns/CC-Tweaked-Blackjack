@@ -7,7 +7,7 @@ args = {...}
 
 
 local monitor = peripheral.wrap(args[1] or "monitor_3")
-local input = peripheral.wrap(args[2] or "minecraft:barrel_2")
+local input = peripheral.wrap(args[2] or "minecraft:barrel_3")
 local storage = peripheral.wrap(args[3] or "create:item_vault_0")
 
 local Buttons = {}
@@ -49,9 +49,9 @@ function cobalt.draw()
 
         cobalt.graphics.setBackgroundColor("brown")
         cobalt.graphics.setColor("white")
-        cobalt.graphics.print("Start",11,8)
+        cobalt.graphics.print("Start",11,11)
 
-        Buttons = { {x={10,17},y={7,9},func=Start} }
+        Buttons = { {x={10,17},y={10,12},func=Start} }
 
         cobalt.graphics.setBackgroundColor("green")
     elseif Stage == 1 then
@@ -64,7 +64,7 @@ function cobalt.draw()
 
         cobalt.graphics.setBackgroundColor("black")
         cobalt.graphics.setColor("white")
-        cobalt.graphics.print("Back",11,8)
+        cobalt.graphics.print("Back",11,11)
 
 
         
@@ -72,7 +72,7 @@ function cobalt.draw()
         cobalt.graphics.print("Diamonds: "..tostring(InvCheck()),11,5)
 
 
-        Buttons = { {x={10,17},y={7,9},func=Back} }
+        Buttons = { {x={10,17},y={10,12},func=Back} }
         cobalt.graphics.setBackgroundColor("white")
     end
 
