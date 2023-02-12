@@ -42,6 +42,10 @@ end
 
 
 function cobalt.draw()
+    term.redirect(term.native())
+    print(Stage)
+    
+        term.redirect(monitor)
     if Stage == 0 then
         cobalt.graphics.setBackgroundColor("green")
         cobalt.graphics.print("BLACKJACK",2,2)
